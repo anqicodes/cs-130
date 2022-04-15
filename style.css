@@ -5,17 +5,26 @@
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
-}
+    font-family: 'Space Grotesk', sans-serif;
+    color: white}
 header, section {
     padding: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: whitesmoke}
+h1 {
+    color: black; 
+    font-family: 'Lexend Zetta', sans-serif;}
+h2 {
+    color: rgb(200, 175, 211); 
+    font-family: 'Lexend Zetta', sans-serif; 
+    line-height: 3.5em;}
+h3 {
+    color: whitesmoke; 
+    font-family: 'Lexend Zetta', sans-serif; 
 }
-p, li {
-    line-height: 1.5em;
-}
-
 #inspiration {
-    background-color: #F0F0F0;
+    background-color: #000000;
+    color: whitesmoke
     padding-top: 40px;
     padding-bottom: 40px;
 }
