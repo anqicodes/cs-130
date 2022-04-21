@@ -1,0 +1,41 @@
+body * {
+    box-sizing: border-box;
+}
+
+body, button {
+    font-family: Avenir, sans-serif;
+}
+
+/*
+Add some style blocks below this line to style the card. 
+Properties to experiment with:
+
+border
+padding
+marging
+height
+width
+*/
+
+section {
+    border: solid 1px; color: teal; 
+    padding: 0px; 
+    width: 20%; 
+}
+
+p, h2, button { 
+    margin: 10px; color: teal; 
+    padding: 5px; 
+    border: teal; 
+} 
+
+img {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    body { 
+        font-size: 1.2 em
+        background-color: hotpink; 
+    }
+}
