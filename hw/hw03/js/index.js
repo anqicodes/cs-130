@@ -45,12 +45,16 @@ const initScreen = () => {
 };
 
 const handleThumbnailClick = ev => {
-    console.log(ev); 
-    /// figure out which element the user clicked on: 
+    // figure out which element the user clicked on: 
     const elem = ev.currentTarget; 
+    currentIndex = parseInt(elem.dataset.index); 
     console.log(elem); 
     const bgImage = elem.style.backgroundImage; 
-    document.querySelector('.featured_image').style.backgroundImage = bgImage; 
+    document.querySelector('.featured_image').style.backgroundImage = bgImage;
+    // update the currentIndex to the inddex associated with the
+    // thumbnail the user just clicked on. 
+    document.querySelector('.featured_image').setAttribute(style,`background-Image; url(${images[currentIndex]})`); 
+    // currentIndex = Number(elem.getAttribute('data-index')); 
 }
 
 // Goal:
@@ -58,21 +62,30 @@ const handleThumbnailClick = ev => {
 // 2. Create a function that handles next 
 
 const previous = () => {
-    currentIndex -= 1; 
+    if (currentIndex > 0) {
+        currentIndex -= 1; 
+    } else {
+        currentIndex = 7; 
+    }
     console.log('Show previous image', currentIndex);
-    console.log(images[currentIndex]);   
+    console.log(images[currentIndex]);
+    document.querySelector('.featured_image').style.backgroundImage = `
+        url('${images[currentIndex]}')
+    `; 
 }; 
 
 const next = () => {
     if (currentIndex < 7) {
         currentIndex += 1; 
     } else {
-        //reset index back to beginning
+        // reset index back to the beginning
         currentIndex = 0; 
     }
     console.log('Show next image', currentIndex); 
-    currentIndex += 1; 
-    console.log(images[currentIndex]);
+    console.log(images[currentIndex]); 
+    document.querySelector('.featured_image').style.backgroundImage = `
+        url('${images[currentIndex]}')
+    `;
 }; 
 
 initScreen();
