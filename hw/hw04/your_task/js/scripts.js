@@ -17,17 +17,69 @@ const search = (ev) => {
 }
 
 const getTracks = (term) => {
-    console.log(`
-        get tracks from spotify based on the search term
-        "${term}" and load them into the #tracks section 
-        of the DOM...`);
+    let url = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}`
+    //this code fetches tracks based on a search term and prints them
+    //to the console. 
+    fetch(url)
+        .then((response) => response.json())
+        .then ((data) => {
+            if (data.length > 0) {
+                let firstFive = data.splice(0, 5)
+                console.log(firstFive[0]);
+                //convert to html
+                let html = firstFive.map(track2HTML).join("");
+                //plug it bakc to the index.html file
+                document.querySelector('#tracks').innerHTML = html;
+            } else {
+                let html = "<p>No tracks found that match your search criteria. </p>";
+                document.querySelector('#tracks').innerHTML = html;
+            }
+        });
 };
 
+const track2HTML = (track) => {
+    return `
+    <button class="track-item preview" data-preview-track=${track.preview_url} onclick="handleTrackClick(event);">
+        <img src=${track.album.image_url} alt="Album cover image of ${track.album.name}">
+        <i class="fas play-track fa-play" aria-hidden="true"></i>
+        <div class="label">
+            <h2>${track.name}</h2>
+            <p>
+                ${track.artist.name}
+            </p>
+        </div>
+    </button>`
+}
+
 const getAlbums = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+    let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+    fetch(url)
+        .then(response => response.json())
+        .then((albums) => {
+            if (albums.length > 0) {
+                console.log (albums);
+                let html = albums.map(album2HTML).join("");
+                document.querySelector("#albums").innerHTML = html;
+            } else {
+                let html = "<p>No albums found that match your search criteria. </p>";
+                document.querySelector('#albums').innerHTML = html;
+            }
+        })
+};
+
+const album2HTML = (album) => {
+    return `
+        <section class="album-card" id="${album.id}">
+            <div>
+                <img src="${album.image_url}" alt="Album cover image of ${album.name}">
+                <h2>${album.name}</h2>
+                <div class="footer">
+                    <a href="https://open.spotify.com/album/2lATw9ZAVp7ILQcOKPCPqp" target="_blank">
+                    view on spotify
+                    </a>
+                </div>
+            </div>
+        </section>`
 };
 
 const getArtist = (term) => {

@@ -110,7 +110,6 @@ const AudioPlayer = (selector, audioFile) => {
         return audio.src;
     };
 
-
     this.initialize = () => {
         // init DOM hooks:
         audio = containerElement.querySelector('#track');
@@ -140,4 +139,3 @@ const AudioPlayer = (selector, audioFile) => {
     }
     return this;
 };
-
