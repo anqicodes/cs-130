@@ -1,0 +1,159 @@
+*{
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-size: 100%; 
+    font-family: 'Space Grotesk'; 
+}
+
+div, section, span, ul, li, a {
+    box-sizing: border-box; 
+}
+
+header {
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    align-items: center; 
+    font-size: 50px;
+    padding: 200px 400px; 
+    color: white; 
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Rubik Microbe'; 
+    background-image: url('images/abstract\ mountain.webp'); 
+    text-align: center; 
+}
+
+h1 {
+    color: white; 
+}
+
+h3 {
+    font-family: 'Lexend Zetta'; 
+    font-size: 30px; 
+}
+
+#headerdesc {
+    display: flex; 
+    justify-content: center;
+    background-color: #271935; 
+    color: whitesmoke; 
+    padding: 20px; 
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#bio { 
+    padding: 200px 400px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column; 
+    font-size: 35px; 
+    background-color: #271935;
+    background-image: -o-linear-gradient(#271935);
+    color: whitesmoke; 
+    text-align: center; 
+} 
+
+#writings {
+    padding: 50px 80px; 
+    display: flex; 
+    align-content: flex-start; 
+    font-size: 20px; 
+    background-color: #503868;
+    color: #a88ac6; 
+}
+
+#newsfeature {
+    padding: 100px 230px; 
+    font-size: 20px; 
+    background-color: black; 
+    color: whitesmoke; 
+}
+
+h2 {
+    padding: 20px 40px; 
+    display: flex; 
+    align-content: flex-start; 
+    font-family: 'Rubik Microbe'; 
+    color: whitesmoke; 
+}
+
+#articles {
+    padding: 100px; 
+    font-size: 30px; 
+    color: #a88ac6; 
+}
+
+a {
+    color: white; 
+}
+
+#art {
+    padding: 100px; 
+    font-size: 40px; 
+    display: flex; 
+    flex-direction: row-reverse;
+    align-content: flex-start; 
+    color: whitesmoke; 
+    display: grid; 
+    background-color: #271935;
+}
+
+#artdesc {
+    display: flex; 
+    flex-direction: column; 
+    font-size: 30px;
+    color: #503868; 
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap; 
+    align-items: baseline; 
+    align-content: space-between; 
+    padding: 0 4px;
+  }
+  
+  .column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 5px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+}
+
+#contact {
+    padding: 200px 400px; 
+    color: white; 
+    background-image: url('images/abstract\ mountain\ copy.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-size: 60px; 
+    text-align: center; 
+}
+/* animation */
